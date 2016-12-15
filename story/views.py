@@ -1,17 +1,13 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from .models import Cause,Story
+from django.shortcuts import render, get_object_or_404
 
+from .models import Cause,Story
 
 # Create your views here.
 
 def index(request):
 	all_stories = Story.objects.all()
-	html = ''
-	for story in all_stories:
-		url = '/story/'+ str(story.id) + '/'
-		html += '<a href="'+ url + '">' + story.story_title + '</a><br>'
-	return HttpResponse(html)
+	context = {	 'all_stories': all_stories }
+	return render(request,'story/index.html',context)
 
 
 def cause(request):
@@ -23,5 +19,6 @@ def cause(request):
 	return HttpResponse(html)
 
 
-def story(request, story_id):
-	return HttpResponse("hi")	
+def detail(request, story_id):
+	story = get_object_or_404(Story,id=story_id)
+	return render(request,'story/detail.html',{'story': story})	
