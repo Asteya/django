@@ -4,10 +4,27 @@
 {% block body %}
 
 	<title> Story </title>
+<div class="container">
+<div class="box">
+    <div class="row">
+    	<h4 class="text-center">{{story}}</h4>
 
-<h3>{{story}}</h3>
-<h3>{{story.body}}</h3>
-<img src="{{story.cover}}">
+              <div class="thumbnail">
+    						<img class="not" src="{{story.cover.url}}" >
+    					</div>
+                <div class="info">
+                <a href="" class="btn">{{story.cause}}</a>
+                    <a href="" class="btn">{{story.ngo}}</a><br>
+                    <div class="thumbnail" >
+                    <p class="text-center">{{story.body}}</p>
+                    </div>
+                    
+                </div>
+            </div>
+            </div>
+        
+            
+</div>
 
-<h5>Cause:{{story.cause}}<br>Ngo:{{story.ngo}}</h5>
+
 {% endblock %}

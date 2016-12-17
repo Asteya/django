@@ -7,46 +7,56 @@
 
 {% block body %}
 	<title> Home </title>
-
 <div id="contentin" align="center">
-{% if all_stories %}
+{% if object_list %}
 
-<ul>
-	<div class="container">
-    <ul class="timeline">
+<div class="container">
+<ul class="timeline">
+{% for story in object_list %}
 
-	{% for story in all_stories %}
+
+    <div class="left-panel" >
+    <div class="col-lg-4 col-md-4 col-sm-2" >
+    	    <div class="panel panel-default" id="post">
+    		    <div class="panel-body">
+    				<div class="col-md-12" >
+    					
+    					<div class="icerik-bilgi">
+    						<a href="#"><h4><a href="{% url 'story:detail' story.id %}">{{story.story_title}}</a></h4></a>
+                            <div class="thumbnail" id="img">
+                            <img class="img-responsive" src="{{story.cover.url}}" >
+                            </div>
+    						<p>{{story.body}}</p>
+    						<div class="btn-group">
+    							<a class="btn btn-social btn-facebook" href="#" data-toggle="tooltip" title="Share Facebook"><i class="fa fa-facebook"></i></a>
+    							<a class="btn btn-social btn-twitter" href="#" data-toggle="tooltip" title="Share Twitter"><i class="fa fa-twitter"></i></a>
+    							<a class="btn btn-social btn-google" href="#" data-toggle="tooltip" title="Share Google"><i class="fa fa-google"></i></a>
+    						</div>
+							<div class="info">   
+							<a class="btn">Read More</a>
+                            <a href="{% url 'story:delete-story' story.id %}" class="btn">Delete</a>    						</div> 
+    						 </a>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+        </div><br>
 	
-	
-	
-        <li>
-          <div class="timeline-badge"><i class="glyphicon glyphicon-check" color="#AACD6E"></i></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h4 class="timeline-title"><a href="{% url 'story:detail' story.id %}">{{story.story_title}}</a></h4>
-              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago via Twitter</small></p>
-            </div>
-            <div class="timeline-body">
-              <p><img src="{{story.cover}}"></p>
-            </div>
-            <div class="timeline-body">
-              <p>{{story.body}}</p>
-            </div>
-          </div>
-          </li>
+        
           
 
-
 	{% endfor %}
-	</ul>
-	</div>
-</ul>
-
+</div>
+</ul>	
+</div>
+<div class="bod">Here</div>
 {% else %}
 	<h3>No stories here</h3>
 {% endif %}
 
 
+{% include 'story/footer.html' %}
 {% endblock %}
+</div>
 
 </html>

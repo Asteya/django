@@ -1,0 +1,35 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'story/style.css'%}">
+
+<nav class="navbar navbar-findcond navbar-fixed-bottom">
+
+<footer id="footer" ><div class="container">
+		<ul class="nav navbar-nav navbar-right" >
+				
+				<li class="active"><a href="#" class="foot">Home<span class="glyphicons glyphicons-home"></span></a></li>
+				<li class=""><a href="#" class="foot">Talks <span class="sr-only"></span></a></li>
+				<li class=""><a href="#" class="foot">PostBox <span class="sr-only"></span></a></li>
+				<li class=""><a href="#" class="foot">Profile <span class="sr-only"></span></a></li>
+
+			</ul>
+			<form class="navbar-form navbar-right">
+				<div class="info" id="search-ngo">
+                <a href="{% url 'story:add-story'%}" class="btn"  id="add story">add story</a>
+				               
+                <a class="btn" id="ngo">Orgs</a>
+                </div>
+			  
+			</form>
+    		 
+		</div>
+	</div></footer></nav>
+    
+{% block body %}
+{% endblock %}
+</div>
