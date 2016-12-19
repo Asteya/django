@@ -1,6 +1,6 @@
 from django.views import generic
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Cause,Story
+from .models import Cause,Story,Ngo
 from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate, login
@@ -17,7 +17,13 @@ class IndexView(generic.ListView):
 class DetailView(generic.DetailView):
 	model = Story
 	template_name = 'story/detail.html'
- 	
+class OrgsView(generic.ListView):
+	template_name = "story/orgs.html"
+	context_object_name = 'org_list'
+	def get_queryset(self):
+		return Ngo.objects.all();
+
+
 
 
 class StoryCreate(CreateView):

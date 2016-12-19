@@ -1,7 +1,22 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'story/style.css'%}">
+
 {% for field in form %}
+
+
 <div >
 <span class="text-danger">{{field.errors}}</span>
 </div>
-<label>{{field.label}}</label>
-<div>{{field}}</div>
+<div class="form-group">
+      <label  class="col-lg-2 control-label" for='{{field}}'>{{field.label}}</label>
+      <div class="col-lg-10">
+        {{field}}
+      </div>
+    </div>
 {% endfor %}
+
