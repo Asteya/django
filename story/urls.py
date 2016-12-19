@@ -7,7 +7,7 @@ app_name = "story"
 urlpatterns = [
     
     url(r'^$', views.IndexView.as_view(), name = 'index'),
-
+    url(r'^register/$',views.UserFormView.as_view(),name='register'),
     url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name = 'detail'),
     #story/add
     url(r'^add/$',views.StoryCreate.as_view(), name='add-story'),

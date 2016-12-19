@@ -1,0 +1,5 @@
+<form method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+{% include 'story/form-template.html'%}
+<div ><button type="submit">Submit</button></div>
+ </form>

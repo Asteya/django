@@ -39,7 +39,6 @@ class Story(models.Model):
 
 
 
-
 #class Product(models.Model):
 
 #class Sponsor(models.Model):

@@ -7,49 +7,27 @@
 
 {% block body %}
 	<title> Home </title>
-<div id="contentin" align="center">
+
 {% if object_list %}
+<div class="panel">
 
-<div class="container">
-<ul class="timeline">
+       <div class="container">
+<div class="col-md-12">
+<p><p>
 {% for story in object_list %}
-
-
-    <div class="left-panel" >
-    <div class="col-lg-4 col-md-4 col-sm-2" >
-    	    <div class="panel panel-default" id="post">
-    		    <div class="panel-body">
-    				<div class="col-md-12" >
-    					
-    					<div class="icerik-bilgi">
-    						<a href="#"><h4><a href="{% url 'story:detail' story.id %}">{{story.story_title}}</a></h4></a>
-                            <div class="thumbnail" id="img">
-                            <img class="img-responsive" src="{{story.cover.url}}" >
-                            </div>
+           
+<div class="card-block">
+    						<a href="{% url 'story:detail' story.id %}"><p>{{story.story_title}}</p></a>
+                           
+                            <img class="img-responsive" alt="Cinque Terre" id="img" float="center" src="{{story.cover.url}}" >
+                            
     						<p>{{story.body}}</p>
-    						<div class="btn-group">
-    							<a class="btn btn-social btn-facebook" href="#" data-toggle="tooltip" title="Share Facebook"><i class="fa fa-facebook"></i></a>
-    							<a class="btn btn-social btn-twitter" href="#" data-toggle="tooltip" title="Share Twitter"><i class="fa fa-twitter"></i></a>
-    							<a class="btn btn-social btn-google" href="#" data-toggle="tooltip" title="Share Google"><i class="fa fa-google"></i></a>
-    						</div>
-							<div class="info">   
-							<a class="btn">Read More</a>
-                            <a href="{% url 'story:delete-story' story.id %}" class="btn">Delete</a>    						</div> 
-    						 </a>
-    					</div>
-    				</div>
-    			</div>
-    		</div>
-        </div><br>
-	
-        
-          
+    						
+					</div>		
+
 
 	{% endfor %}
-</div>
-</ul>	
-</div>
-<div class="bod">Here</div>
+</div> </div></p></p></div></div></div>
 {% else %}
 	<h3>No stories here</h3>
 {% endif %}
@@ -57,6 +35,5 @@
 
 {% include 'story/footer.html' %}
 {% endblock %}
-</div>
 
-</html>
+
