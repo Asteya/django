@@ -155,7 +155,7 @@ body {padding-top:20px;}
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
-body{font-family: 'Open Sans', sans-serif; padding:100px;background: #fff;}
+body{font-family: 'Open Sans', sans-serif; padding:100px;background: #f9f9f9;border-left: 2px;}
 
 
 /* PANEL */
@@ -190,9 +190,11 @@ body{font-family: 'Open Sans', sans-serif; padding:100px;background: #fff;}
     border-collapse: separate;
     border-spacing: 2px;
   border-color: #eee;
-box-shadow: 1px 1px 1px 1px #eee;
+box-shadow: 3px 3px 3px 3px #eee;
 overflow-y:hidden;
 overflow-x: hidden;
+content: wrap;
+
 }
 .panel-body{
     align-content: center;
@@ -209,6 +211,8 @@ overflow-x: hidden;
     width: 6%;
     right: 1%;
     top:16%;
+    border-color: #AACD6E;
+    b
 }
 
 #panel-middle{
@@ -218,6 +222,7 @@ overflow-x: hidden;
     height: 80%;
     right: 8%;
     top:11%;
+    border-color: #AACD6E;
    
 
 }
