@@ -1,0 +1,53 @@
+{% extends 'base.html'%}
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+{% block body %}
+
+	<title> NGO </title>
+    <div class="row"  id="prof">
+    	<header>{{ngo}}</header>
+
+              <div class="col-md-2 hidden-xs">
+    						<figure>
+                              <img class="img-circle img-responsive" align="center" alt="" src="{{ngo.ngo_pic.url}}">
+                           </figure>
+    			</div><br>
+              
+                <a href="" class="btn">{{ngo.ngo_name}}</a>
+             <h1>body</h1><p>{{ngo.body}}</p>
+                    <hr>
+            <h1>address</h1>
+               <p>{{ngo.address}}</p>
+                  <hr>
+
+             <h1>website</h1><p>{{ngo.website}}</p>
+                  <hr>
+
+             <h1>contact</h1> <p>{{ngo.contact}}</p>
+            <hr>
+             <h1>awards</h1> <p>{{ngo.awards}}</p>
+                  <hr>
+
+         <h1>vision</h1><p>{{ngo.vision}}</p>
+                  <hr>
+
+            <h1>mission</h1><p>{{ngo.mission}}</p>
+                  <hr>
+
+        <h1>history</h1><p>{{ngo.history}}</p>
+                  <hr>
+
+                 <h1>date</h1> <p>{{ngo.founded_date}}</p>
+                 
+
+
+
+
+     </div>
+
+        
+            
+
+
+{% endblock %}

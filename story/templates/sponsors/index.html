@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+{% extends 'base.html'%}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css'%}">
+
+
+{% block body %}
+	<title> Sponsors </title>
+
+{% if object_list %}
+
+<div class="panel">
+  <div class="container">
+     <div class="col-md-12">
+<p><p>
+
+{% for sponsor in object_list %}
+           
+            <div class="card-block">
+    				<h1>	<a href="{% url 'story:sponsor-detail' sponsor.id %}"><p>{{sponsor.name}}</p></a></h1>
+                  <p>{{sponsor.about}}</p>
+                  <img class="img-responsive" alt="Cinque Terre" id="img" float="center" src="{{sponsor.cover.url}}" >
+            </div>		
+
+        <span class="badge">Posted 2012-08-02 20:47:04</span><div class="pull-right"><span class="label label-default">alice</span> <span class="label label-primary">sponsor</span> <span class="label label-success">blog</span> <span class="label label-info">personal</span> <span class="label label-warning">Warning</span>
+        <span class="label label-danger">Danger</span></div>  
+
+<hr>
+
+	{% endfor %}
+
+
+</div> </div></p></p></div></div></div>
+
+
+{% else %}
+	<h3>No Sponsors here</h3>
+
+
+{% endif %}
+
+<div class="panel panel-default" id="panel-middle">
+</div>
+
+{% include 'story/footer.html' %}
+{% endblock %}
+
+

@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+
+
+{% block body %}
+
+	<title> Sponsors </title>
+
+<div class="box">
+   <div align="center">
+    	<h4 class="text-center">{{sponsor}}</h4>
+
+              
+    						<img class="img-responsive" alt="Cinque Terre" id="img-d" float="center" src="{{sponsor.cover.url}}" >
+    			
+                <div class="info">
+                <a href="" >{{sponsor.about}}</a>
+                    <a href="" >{{sponsor.website}}</a><br>
+                    
+                    <p class="text-center">{{sponsor.body}}</p>
+                  
+                    
+                </div>
+            </div>
+            </div>
+        
+            
+{% include 'story/footer.html' %}
+
+
+{% endblock %}

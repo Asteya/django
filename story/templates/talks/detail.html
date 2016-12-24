@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+
+
+{% block body %}
+
+	<title> Talks </title>
+
+<div class="box">
+   <div align="center">
+    	<h4 class="text-center">{{talk}}</h4>
+
+              
+    						<img class="img-responsive" alt="Cinque Terre" id="img-d" float="center" src="{{talk.cover.url}}" >
+    			
+                <div class="info">
+                <a href="" >{{talk.desc}}</a>
+                    <a href="" class="btn">{{talk.date}}</a><br>
+                    
+                    <p class="text-center">{{talk.body}}</p>
+                  
+                    
+                </div>
+            </div>
+            </div>
+        
+            
+{% include 'story/footer.html' %}
+
+
+{% endblock %}

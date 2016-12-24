@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+{% extends 'base.html'%}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'story/style.css'%}">
+
+
+{% block body %}
+<head>
+	<title> Affinity </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> 
+      <script type="text/javascript">
+      	
+      	function Slider(){
+      		$(".slider #1").show("fade",100);
+      		$(".slider #1").delay(5500).hide("slide",(direction: 'left'),500);
+      	}
+
+      </script>
+</head>
+
+	<div class="row" id="alert-panel">
+        
+            <!-- Begin fluid width widget -->
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <span class="glyphicon glyphicon-list-alt"></span>  Alerts
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="media-list">
+                        <li class="media">
+                            <div class="media-body">
+                                <h4 class="media-heading">
+                                                <a href="#" class="text-info">
+                                                    Ultricies Luctus
+                                                </a>
+                                            </h4>
+                                <p class="margin-top-10 margin-bottom-20">
+                                    Ut sit amet tincidunt risus. Aenean quis tempus tortor. Pellentesque commodo malesuada augue...
+                                </p>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <div class="media-body">
+                                <h4 class="media-heading">
+                                    <a href="#" class="text-info">
+                                        Nulla Vitae
+                                    </a>
+                                </h4>
+                                <p class="margin-top-10 margin-bottom-20">
+                                    Pellentesque id nulla vitae nisl mollis hendrerit a non nisi. Cras ac velit elit. Fusce nulla odio, iaculis...
+                                </p>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <div class="media-body">
+                                <h4 class="media-heading">
+                                    <a href="#" class="text-info">
+                                        Media Heading
+                                    </a>
+                                </h4>
+                                <p class="margin-top-10 margin-bottom-20">
+                                    Donec venenatis, orci sit amet tempor dapibus, nisi elit imperdiet ex, nec lobortis ex magna eu felis...
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                </div>
+
+</div>
+</div>
+<div class="home">
+    <div class="row">
+		<div class="col-md-12" id="right">
+		<h3>Projects</h3>
+                <div id="Carousel" class="carousel slide">
+                 
+                <ol class="carousel-indicators">
+                    <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#Carousel" data-slide-to="1"></li>
+                    <li data-target="#Carousel" data-slide-to="2"></li>
+                </ol>
+                 
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    
+                <div class="item active">
+                	<div class="row">
+                	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                	</div><!--.row-->
+                </div><!--.item-->
+                 
+                <div class="item">
+                	<div class="row">
+                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                	</div><!--.row-->
+                </div><!--.item-->
+                 
+                <div class="item">
+                	<div class="row">
+                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                	</div><!--.row-->
+                </div><!--.item-->
+                 
+                </div><!--.carousel-inner-->
+                  <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+                  <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
+                </div><!--.Carousel-->
+                 
+		</div>
+	</div>
+
+<div class="row">
+		<div class="col-md-12" id="right-1">
+		<h3>Deals</h3>
+                <div id="Carousel" class="carousel slide">
+                 
+                <ol class="carousel-indicators">
+                    <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#Carousel" data-slide-to="1"></li>
+                    <li data-target="#Carousel" data-slide-to="2"></li>
+                </ol>
+                 
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    
+                <div class="item active">
+                	<div class="row">
+                	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                	</div><!--.row-->
+                </div><!--.item-->
+                 
+                <div class="item">
+                	<div class="row">
+                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                	</div><!--.row-->
+                </div><!--.item-->
+                 
+                <div class="item">
+                	<div class="row">
+                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                	</div><!--.row-->
+                </div><!--.item-->
+                 
+                </div><!--.carousel-inner-->
+                  <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+                  <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
+                </div><!--.Carousel-->
+                 
+		</div>
+	</div>
+
+
+
+
+</div>
+<body onload="Slider();">
+<div class="slider" >
+<figure>
+	<img id="1" src="https://s3-us-west-1.amazonaws.com/powr/defaults/image-slider2.jpg" border="0">
+	<img id="2" src="https://s3-us-west-1.amazonaws.com/powr/defaults/image-slider2.jpg" border="0">
+	<img id="3" src="https://s3-us-west-1.amazonaws.com/powr/defaults/image-slider2.jpg" border="0">
+	</figure>
+</div>
+</div>
+</body>
+
+
+</html>
+		
+	
+  {% endblock %}
