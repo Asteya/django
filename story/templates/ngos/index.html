@@ -13,35 +13,38 @@
         <header>NGOs</header>
     </div></div>
 {% if object_list %}
+<p></p>
 
-<section id="t-cards">
     <div class="container">
-        <div class="row">
+        
 {% for ngo in object_list %}
 
- <div class="col-sm-6 col-md-3">
-                <div class="panel panel-default panel-card">
-                    <div class="panel-heading">
-                        <img src="{{ngo.ngo_pic.url}}" />
-                        <button class="btn btn-primary btn-sm" role="button">Follow</button>
-                    </div>
-                    <div class="panel-figure">
-                        <img class="img-responsive img-circle" src="{{ngo.ngo_pic.url}}" />
-                    </div>
-                    <div class="panel-body text-center">
-                        <h4 class="panel-header"><a href="{% url 'story:ngo-detail' ngo.id %}">{{ngo.ngo_name}}</a></h4>
-                        <small>visit us here.</small>
-                    </div>
-                    
-                        </div>
-                    </div>
+
+             
+                        <img class="img-circle" id="img-org" src="{{ngo.ngo_pic.url}}" />
+                        <img class="img-circle" id="img-org" src="{{ngo.ngo_pic.url}}" />
+                        <img class="img-circle" id="img-org" src="{{ngo.ngo_pic.url}}" />
+                         <img class="img-circle" id="img-org" src="{{ngo.ngo_pic.url}}" />
+                        <img class="img-circle" id="img-org" src="{{ngo.ngo_pic.url}}" />
+                        <img class="img-circle" id="img-org" src="{{ngo.ngo_pic.url}}" />
+                         <img class="img-circle" id="img-org" src="{{ngo.ngo_pic.url}}" />
+                        <img class="img-circle" id="img-org" src="{{ngo.ngo_pic.url}}" />
+                        <img class="img-circle" id="img-org" src="{{ngo.ngo_pic.url}}" />
+
+                         <img class="img-circle" id="img-org" src="{{ngo.ngo_pic.url}}" />
+                        <img class="img-circle" id="img-org" src="{{ngo.ngo_pic.url}}" />
+                        <img class="img-circle" id="img-org" src="{{ngo.ngo_pic.url}}" />
+                         <img class="img-circle" id="img-org" src="{{ngo.ngo_pic.url}}" />
+                        <img class="img-circle" id="img-org" src="{{ngo.ngo_pic.url}}" />
+                        <img class="img-circle" id="img-org" src="{{ngo.ngo_pic.url}}" />
+                        
 
 
 	{% endfor %}
 
 
              
-                </div>   
+             
         </div>
         
 </section>

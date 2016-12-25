@@ -295,6 +295,10 @@ stylize any heading tags withing white-panel below
     -webkit-transition-duration: 0.3s; /* Safari */
     width: 250px;
     height: 250px;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     }
 
 #img-org:hover {
@@ -725,64 +729,93 @@ Image placeholders: placemi.com
 
 
 
+        .carousel-control.left
+      {
+        background: none;
+      }
+      .carousel-control.right
+      {
+        background: none;
+      }
+
+      .carousel-control
+      {
+        position: absolute;
+        top: 45%;
+        bottom: 0;
+        left: 0;
+        width: 15%;
+        font-size: auto;
+        color: #fff;
+        text-align: center;
+        opacity: 1;
+        text-shadow: none;
+      }
+      .carousel-control:hover
+      {
+        color: #000;
+      }
+      .carousel-indicators
+      {
+        bottom: -50px;
+      }
+      .carousel-indicators li
+      {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin: 1px;
+        text-indent: -999px;
+        cursor: pointer;
+        background-color: #AACD6E;
+        background-color: rgba(0,0,0,0);
+        border: 1px solid #AACD6E;
+        border-radius: 50%;
+      }
+      .carousel-indicators .active
+      {
+        width: 12px;
+        height: 12px;
+        margin: 0;
+        background-color: #AACD6E;
+      }
+      .carousel-caption
+      {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        color: #fff;
+        text-align: center;
+        background: rgba(0,0,0,0.4);
+      }
 
 
-.carousel {
-    margin-bottom: 0;
-    padding: 0 40px 30px 40px;
-}
-/* The controlsy */
-.carousel-control {
-  left: -12px;
-    height: 40px;
-  width: 40px;
-    background: none repeat scroll 0 0 #222222;
-    border: 4px solid #FFFFFF;
-    border-radius: 23px 23px 23px 23px;
-    margin-top: 90px;
-}
-.carousel-control.right {
-  right: -12px;
-}
-/* The indicators */
-.carousel-indicators {
-  right: 50%;
-  top: auto;
-  bottom: -10px;
-  margin-right: -19px;
-}
-/* The colour of the indicators */
-.carousel-indicators li {
-  background: #cecece;
-}
-.carousel-indicators .active {
-background: #428bca;
-}
 
-
-.slider{
-  float: right;
-  width: 600px;
-  height: 350px;
-  overflow:hidden;
-  margin: 30px auto;
-}
 
 .slider img{
   display: none;
 }
 
-#right{
-  width: 52%;
-
-  float: right;
-}
-#right-1{
-  float: right;
-  width: 52%;
-}
-
-.home{
-  right: 5%;
+ #slider-panel{
   position: fixed;
+    z-index: 2;
+    width: 54%;
+    right: 1%;
+    top:6%;
+    border: 0px;
+
+    padding: 6px 4px 6px 4px;
+    align-content: center;
+ }
+
+ #banner{
+  width: 600px;
+  height: 200px;
+ }
+ #Carousel-4{
+  padding-left: 20px;
  }
