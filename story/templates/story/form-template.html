@@ -6,6 +6,10 @@
 {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'story/style.css'%}">
 
+
+
+  <form class="form-horizontal">
+<fieldset>
 {% for field in form %}
 
 
@@ -13,10 +17,24 @@
 <span class="text-danger">{{field.errors}}</span>
 </div>
 <div class="form-group">
-      <label  class="col-lg-2 control-label" for='{{field}}'>{{field.label}}</label>
-      <div class="col-lg-10">
+      <label  class="col-md-4 control-label" for='{{field}}'>{{field.label}}</label>
+      <div class="">
         {{field}}
       </div>
     </div>
+
+
+<hr>
+  
+
+<!-- Form Name -->
+
+
+
+
+
+
 {% endfor %}
 
+</fieldset>
+</form>

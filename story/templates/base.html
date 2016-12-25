@@ -17,16 +17,16 @@
 				<span class="icon-bar"></span>
 			</button>
 
-			<a class="navbar-brand" href="{% url 'story:index-today'%}">Affinity</a>
+			<a class="navbar-brand" href="{% url 'story:index-today'%}"> Affinity </span></a>
 			
 		</div>
 
 		<div class="collapse navbar-collapse" id="navbar">
 			<ul class="nav navbar-nav navbar-left">
 				
-				<li class="active"><a href="{% url 'story:index'%}">Home<span class="glyphicons glyphicons-home"></span></a></li>
-				<li class=""><a href="{% url 'story:talk-index' %}">Talks <span class="sr-only"></span></a></li>
-				<li class=""><a href="{% url 'story:ngo-index' %}">Orgs <span class="sr-only"></span></a></li>
+				<li class="active"><a href="{% url 'story:index'%}"><span class="glyphicon glyphicon-home"></span> Home<span class="glyphicons glyphicons-home"></span></a></li>
+				<li class=""><a href="{% url 'story:talk-index' %}"><span class="glyphicon glyphicon-facetime-video"></span> Talks <span class="sr-only"></span></a></li>
+				<li class=""><a href="{% url 'story:ngo-index' %}"><span class="glyphicon glyphicon-globe"></span> Orgs <span class="sr-only"></span></a></li>
 				<li class=""><a href="#">Spons <span class="sr-only"></span></a></li>
 
 			</ul>
@@ -35,16 +35,20 @@
 				 <div class="info" >
 				  <form class="navbar-form navbar-right search-form" role="search">
 				<input type="text" class="form-control" placeholder="Search" />
-				
-                    <span class=" glyphicon glyphicon-search" color="#AACD6E"></span>
-              
-                <a class="btn" id="ngo">Logout</a>
-               
-			</form> </div>
-			  
+				<span class=" glyphicon glyphicon-search" color="#AACD6E"></span>
+				<form class="navbar-right" >
+                    
+<a href="#" class="btn btn-sm btn-default">Panel <span class="glyphicon glyphicon-certificate"></span></a>
+<a href="#" class="btn btn-xs btn-danger" >Logout <span class="glyphicon glyphicon-remove"></span></a>
+			 </div></form>
+			  </form>
 			
 		</div>
 	</div>
 </nav>
+<div>
 {% block body %}
 {% endblock %}
+</div>
+
+ 

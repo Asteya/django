@@ -32,10 +32,44 @@ class StoryCreate(CreateView):
 	model =Story
 	fields = ['ngo','cause','story_title','cover','body']	
 
+	def post(self,request):
+		form =self.form_class(request.POST)
+
+		if request.user.is_authenticated:
+			if request.user.is_active:
+				model = Story
+				fields = ['ngo','cause','story_title','cover','body']
+
 class StoryUpdate(UpdateView):
 	
 	model =Story
 	fields = ['ngo','cause','story_title','cover','body']	
+
+	form_class = Userform
+	template_name = 'story/story_form.html'
+
+	#get form request
+	def get(self,request):
+		form =self.form_class(None)
+		return render(request,self.template_name,{'form': form})
+
+
+	def post(self,request):
+		form =self.form_class(request.POST)
+
+		if form.is_valid():
+			story = form.save(commit=False)
+			# cleaned  data
+			
+			story.save()
+
+			story= authenticate(username=username,password=password)
+
+			if user is not None:
+				if user.is_active:
+					return redirect("story:index")
+
+		return render(request,self.template_name,{'form':form})
 
 class StoryDelete(DeleteView):
 	model = Story
@@ -67,8 +101,6 @@ class UserFormView(View):
 
 			if user is not None:
 				if user.is_active:
-					login(request,user)
-					current_user = request.user
 					return redirect("story:index")
 
 		return render(request,self.template_name,{'form':form})
@@ -144,6 +176,7 @@ class NgoDetailView(generic.DetailView):
 
 
 class NgoUpdate(UpdateView):
+
 		
 		def get(self,request):
 			current_user = self.request.user
