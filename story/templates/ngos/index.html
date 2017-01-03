@@ -19,13 +19,13 @@
         
 {% for ngo in object_list %}
 
-
+                <a href="{% url 'story:ngo-detail' ngo.id %}">
              
                         <img class="img-circle" id="img-org" src="{{ngo.ngo_pic.url}}" />
                         <img class="img-circle" id="img-org" src="{{ngo.ngo_pic.url}}" />
          
                         
-
+                        </a>    
 
 	{% endfor %}
 

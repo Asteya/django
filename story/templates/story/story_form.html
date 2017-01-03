@@ -1,7 +1,7 @@
 
-{% csrf_token %}
 {% include 'base.html'%}
 {% block body %}
+
 
 <div class="form-desc">
 	<legend>Submit a Story</legend>
@@ -10,7 +10,8 @@
 </div>
 <div class="container">
     <div class="form-area"> 
-<form method="POST" enctype="multipart/form-data">
+<form method="post" enctype="multipart/form-data">
+{% csrf_token %}
 <legend>Submit a Story</legend>
 {% include 'story/form-template.html'%}
 <div ><button type="submit">Submit</button></div>

@@ -32,20 +32,20 @@
 			</ul>
 
 			
-				 <div class="info" >
 				  <form class="navbar-form navbar-right search-form" role="search">
 				<input type="text" class="form-control" placeholder="Search" />
 				<span class=" glyphicon glyphicon-search" color="#AACD6E"></span>
-				<form class="navbar-right" >
-                    
-<a href="#" class="btn btn-sm btn-default">Panel <span class="glyphicon glyphicon-certificate"></span></a>
-<a href="#" class="btn btn-xs btn-danger" >Logout <span class="glyphicon glyphicon-remove"></span></a>
-			 </div></form>
+				<a href="{% url 'story:logout' %}" class="btn btn-xs btn-danger" >Logout <span class="glyphicon glyphicon-remove"></span></a>
 			  </form>
 			
-		</div>
+	
 	</div>
 </nav>
+
+
+
+
+			
 <div>
 {% block body %}
 {% endblock %}

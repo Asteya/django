@@ -3,9 +3,12 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Cause,Story,Ngo,Talk
 from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import render,redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.views.generic import View
 from .forms import Userform
+from django.http import HttpResponse
+from django.http import HttpResponseRedirect
+from django.shortcuts import render_to_response
 
 # Create your views here.
 
@@ -22,9 +25,20 @@ class DetailView(generic.DetailView):
 	model = Story
 	template_name = 'story/detail.html'
 
+
 class AppView(generic.ListView):
+
 	template_name='app/index.html'
 	model=Story
+
+
+def art(request):
+	cookie = 'ngo'
+	session = 'ngo'
+
+	if 'lang' in request.COOKIES:
+		cookie = request.COOKIES('lang')
+
 
 
 class StoryCreate(CreateView):
@@ -32,44 +46,14 @@ class StoryCreate(CreateView):
 	model =Story
 	fields = ['ngo','cause','story_title','cover','body']	
 
-	def post(self,request):
-		form =self.form_class(request.POST)
 
-		if request.user.is_authenticated:
-			if request.user.is_active:
-				model = Story
-				fields = ['ngo','cause','story_title','cover','body']
 
 class StoryUpdate(UpdateView):
 	
 	model =Story
 	fields = ['ngo','cause','story_title','cover','body']	
 
-	form_class = Userform
-	template_name = 'story/story_form.html'
-
-	#get form request
-	def get(self,request):
-		form =self.form_class(None)
-		return render(request,self.template_name,{'form': form})
-
-
-	def post(self,request):
-		form =self.form_class(request.POST)
-
-		if form.is_valid():
-			story = form.save(commit=False)
-			# cleaned  data
-			
-			story.save()
-
-			story= authenticate(username=username,password=password)
-
-			if user is not None:
-				if user.is_active:
-					return redirect("story:index")
-
-		return render(request,self.template_name,{'form':form})
+	
 
 class StoryDelete(DeleteView):
 	model = Story
@@ -105,25 +89,27 @@ class UserFormView(View):
 
 		return render(request,self.template_name,{'form':form})
 
-class ProfileView(UpdateView):
-	form_class = Userform
-	template_name = 'ngo/profile.html'
+def Login(request):
+    next = request.GET.get('next', '/app/')
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
 
-	def get(self,request):
-		form =self.form_class(None)
-		return render(request,self.template_name,{'form': form})
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return HttpResponseRedirect(next)
+            else:
+                return HttpResponse("Inactive user.")
+        else:
+            return HttpResponseRedirect(settings.LOGIN_URL)
 
-	def post(self,request):
-		form =self.form_class(request.POST)
+    return render(request, "story/login.html", {'redirect_to': next})
 
-		if request.user.is_authenticated:
-			if request.user.is_active:
-				if request.user == ngo.user:
-					model = Ngo
-					fields = ['cause','ngo_name','ngo_pic','body']
-
-
-
+def Logout(request):
+    logout(request)
+    return HttpResponseRedirect(settings.LOGIN_URL)
 
 
 #####Talk#######

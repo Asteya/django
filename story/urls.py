@@ -1,7 +1,7 @@
 from django.conf.urls import url
 from django.contrib import admin
 from . import views
-
+from story import views
 app_name = "story"
 
 urlpatterns = [
@@ -10,7 +10,10 @@ urlpatterns = [
     url(r'^today/$', views.IndexView.as_view(), name = 'index-today'),
     url(r'^register/$',views.UserFormView.as_view(),name='register'),
     url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name = 'detail'),
-   
+
+    url(r'^login/', views.Login),
+    url(r'^logout/', views.Logout,name="logout"),
+
     #story/add
     url(r'^add/$',views.StoryCreate.as_view(), name='add-story'),
     url(r'^edit/(?P<pk>[0-9]+)/$',views.StoryUpdate.as_view(), name='edit-story'),

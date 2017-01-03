@@ -1,5 +1,10 @@
 
 /* content */
+.container{
+    overflow: hidden;
+}
+
+
 /*________________________________________________________________________________________________________________________________*/
 
 /*                ----NAVBAR---                      */
@@ -27,6 +32,12 @@ nav.navbar-findcond ul.dropdown-menu > li > a:hover { background: #2f2f2f; color
 nav.navbar-findcond span.badge { background: #2f2f2f; font-weight: normal; font-size: 11px; margin: 0 4px; }
 nav.navbar-findcond span.badge.new { background: rgba(255, 0, 0, 0.8); color: #2f2f2f; }
 
+
+
+.navbar-right{
+  top:2%;
+  right: 1%;
+}
 /*________________________________________________________________________________________________________________________________*/
 
 /*              ----Slider------                           */
@@ -147,14 +158,14 @@ width: 100%;
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
-body{font-family: 'Open Sans', sans-serif; padding:100px;background: #f9f9f9;border-left: 2px;}
+body{font-family: 'Open Sans', sans-serif; padding:100px;background: #f9f7f1;border-left: 2px;}
 
 
 body{
     font-family: 'Droid Serif', serif;
     font-size: 14px;
     color: #2f2f2f;
-    background-color: #f7f7f7;
+    background-color: #f9f7f1;
 }
 header{
     font-family: 'Playfair Display', serif;
@@ -205,7 +216,7 @@ p{
     line-height: 0;
     word-spacing: -.31em;
     display: inline-block;
-    margin: 30px 2% 0 2%;
+    margin: 20px 2% 2% 2%;
 
 
 }
@@ -216,18 +227,20 @@ p{
 .collumn{
     font-size: 14px;
     line-height: 20px;
-    width: 22.5%;
+    width: 24%;
     display: inline-block;
     padding: 0 1% 0 1%;
     vertical-align: top;
     margin-bottom: 50px;
     transition: all .7s;
+    word-wrap: break-word;
+    border-left: 1px solid #2f2f2f;
 }
 .collumn a{
   color: #2f2f2f;
 }
 .collumn + .collumn { 
-  border-left: 1px solid #2f2f2f;
+  
 }
 .collumn .headline{
     text-align: center;
@@ -448,8 +461,8 @@ p{
 /*________________________________________________________________________________________________________________________________*/
 /*            Talk index style                          */
 .rowl{
-  width: 70%;
-  float: center;
+  width: 90%;
+  
 }
 
 /*----------------------
@@ -505,17 +518,17 @@ span.itemPrice {
     margin-left: 50px;
     margin-top: 50px;
     margin-bottom: 50px;
-    border: 1px solid #2f2f2f;
+    border: 3px solid #fff;
     }
 
 #img-org:hover {
     cursor: pointer;
-    -webkit-transform: scale(2, 2);
-    -ms-transform: scale(2, 2);
-    transform: scale(2, 2);
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1);
     transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s; /* Safari */
-    box-shadow: 10px 10px 5px #888888;
+    box-shadow: 5px 5px 3px #888888;
     z-index: 1;
     }
 
@@ -543,3 +556,199 @@ span.itemPrice {
 
 
 /*________________________________________________________________________________________________________________________________*/
+/* Profile */
+
+tm-sidebar {
+    position: fixed;
+    width: 360px;
+}
+
+.tm-main-nav {
+    background-color: white;
+    font-size: 1.6667em;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.tm-nav-item {
+    list-style: none;
+    width: 100%;
+    padding: 15px 30px;
+}
+
+.tm-nav-item-link{
+    border: 1px solid rgba(0,0,0,0);
+    color: #666;
+    display: block;
+    padding: 10px;
+    width: 100%;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.tm-nav-item-link.active,
+.tm-nav-item-link:hover {
+    color: #666;
+    text-decoration: none;
+    border: 1px solid #999;
+}
+
+.tm-nav-item-link:focus { text-decoration: none; }
+
+.tm-banner-title, 
+.tm-section-title, 
+.tm-banner-text {
+    color: #666;
+    font-weight: 300;
+    margin-top: 0;
+}
+
+.tm-section-title { margin-bottom: 20px; }
+
+.tm-section-title-box { margin-bottom: 0; }
+
+.tm-banner-title { 
+    font-size: 3.3em;
+    letter-spacing: 2px; 
+}
+
+.tm-main-content {
+    margin-left: 360px;
+    padding-left: 30px;
+}
+
+.tm-content-box {
+    background-color: white;
+    margin-bottom: 30px;
+}
+
+.pad { padding: 50px; }
+
+.tm-banner {
+    height: 370px;
+    padding: 30px;
+}
+    
+.tm-banner-inner {
+    border: 1px solid #999;
+    height: 100%;
+    text-align: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+    
+.tm-banner-title { text-transform: uppercase; }
+
+.tm-banner-text { font-size: 1.4em; }
+
+.flex-2-col {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+/*http://stackoverflow.com/questions/29562755/flexbox-ie10-width-issues*/
+.flex-item { 
+    -webkit-box-flex: 0 1 auto; 
+    -webkit-flex: 0 1 auto; 
+        -ms-flex: 0 1 auto; 
+            flex: 0 1 auto;
+}
+
+.section-description {
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.section-description:last-child { margin-bottom: 0; }
+
+.tm-team-description-container { max-width: 500px; }
+
+.box {
+    background-color: white;
+    list-style: none;
+    width: 33.3333%;
+    height: auto;
+}
+
+.box-bg { position: relative; }
+
+.tm-box-bg-title {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.boxes {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+}
+
+.gallery-container a {
+    cursor: -webkit-zoom-in;
+    cursor: zoom-in;
+}
+
+.carousel {
+    position: relative;
+    height: auto;
+    padding: 50px 50px 80px 50px;
+    text-align: center;
+}
+
+.carousel-indicators { bottom: 30px; }
+
+/*http://codepen.io/matthewhirsch/pen/OPwQRL*/
+.carousel-content {
+    color:black;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+        -ms-flex-align:center;
+            align-items:center;
+}
+
+.carousel-indicators li { border: 1px solid #999; }
+
+.carousel-indicators .active { background-color: #999; }
+

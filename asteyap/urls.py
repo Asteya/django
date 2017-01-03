@@ -17,12 +17,17 @@ from django.conf.urls import include,url
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^app/', include('story.urls')),
-    url(r'^$', include('story.urls')),
-
-
+    url(r'^', include('story.urls')),
+    #ngo auth
+   # url(r'^accounts/login/$','asteyap.views.login'),
+    #url(r'^accounts/auth/$','asteyap.views.auth_view'),
+    #url(r'^accounts/logout/$','asteyap.views.logout'),
+    #url(r'^accounts/loggedin/$','asteyap.views.loggedin'),
+    #url(r'^accounts/invalid/$','asteyap.views.invalid_login'),
 
 
 ]
